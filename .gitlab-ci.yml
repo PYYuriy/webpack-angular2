@@ -1,0 +1,63 @@
+# gitlab ci setup for jubbr frontend package
+# You need to set the following variables in gitlab for this to work:
+#
+image: node:6.5.0
+
+services: []
+
+#cache:
+#  key: "$CI_BUILD_REF_NAME"
+#  untracked: true
+
+before_script:
+  - 'id'
+  - 'node --version'
+  - 'npm --version'
+  - 'die() { echo $1 ; exit 1 ; }'
+stages:
+  - deps
+  - lint
+  - build
+  - stage-deploy
+deps:
+  stage: deps
+  script:
+  - 'npm install'
+  artifacts:
+    paths:
+    - 'node_modules/'
+lint:
+  stage: lint
+  script:
+  - 'npm run lint'
+  dependencies:
+  - deps
+build:
+  stage: build
+  script:
+#  - 'npm run clean'
+  - 'npm install'
+  - 'npm run build:prod'
+  dependencies:
+    - deps
+  artifacts:
+    paths:
+      - 'dist/'
+stage-deploy:
+  stage: stage-deploy
+  only:
+  - master
+  artifacts:
+    paths:
+      - 'dist/'
+  script:
+  - 'test "${CD_PROD_CON}" || die "please set CD_PROD_CON variable"'
+  - 'test "${CD_STAGE_KEY}" || die "please set CD_STAGE_KEY variable"'
+  - 'eval $(ssh-agent -s)'
+  - 'ssh-add <(echo "${CD_STAGE_KEY}")'
+  - 'ssh -p 3022 -o UserKnownHostsFile=.known_hosts-deploy "${CD_PROD_CON}" "rm -rf /var/www/webroot/ROOT/*"'
+  - 'scp -P 3022 -o UserKnownHostsFile=.known_hosts-deploy -rp dist/* "${CD_PROD_CON}":/var/www/webroot/ROOT'
+  # rsync is not installed on server ---- rsync -avz -e "ssh -o UserKnownHostsFile=.known_hosts-deploy -p 3022" dist 141986-26291@gate.jelastic.dogado.eu:/var/www/webroot/ROOT  dependencies:
+  dependencies:
+  - deps
+  - build

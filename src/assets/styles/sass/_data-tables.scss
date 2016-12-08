@@ -1,0 +1,47 @@
+// Overrides for DataTables Material
+.datatable.material {
+  box-shadow: none;
+  * {
+    box-sizing: border-box;
+  }
+  .datatable-header {
+    border-color: $border-color;
+
+    .datatable-header-cell {
+      text-transform: capitalize;
+    }
+  }
+
+  .datatable-header, .datatable-body {
+    .datatable-row-center {
+      .datatable-header-cell, .datatable-body-cell {
+        padding: .5rem 1.2rem;
+        text-align: center;
+        display: table-cell;
+        &:first-of-type {
+          text-align: left;
+          padding: .5rem 1.2rem .5rem 0;
+        }
+        &:last-of-type:last-child {
+          text-align: right;
+          padding: .5rem 0 .5rem 1.2rem;
+        }
+      }
+    }
+
+    .datatable-body-row:hover,
+    .datatable-body-row:hover .datatable-row-group {
+      background-color: transparent;
+    }
+  }
+}
+
+.rs-finance-card {
+  &.overview-areas-finance {
+
+    .datatable.material {
+
+    }
+  }
+}
+

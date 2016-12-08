@@ -1,0 +1,177 @@
+boot-gallery {
+  width: 100%;
+  #custom_carousel {
+    .gallery-delete-bt {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .nav-holder {
+      opacity: 0;
+      &.small {
+        .next, .prev {
+          display: block;
+          height: 20px;
+          width: 20px;
+          line-height: 20px;
+          @include respond-to(desktops-large) {
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+          }
+          i {
+            font-size: 18px;
+            @include respond-to(desktops-large) {
+              font-size: 28px;
+            }
+          }
+        }
+      }
+      .next, .prev {
+        -webkit-user-select: none; /* Chrome all / Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        background: $color-secondary-gray;
+        color: $inverse-text;
+        text-align: center;
+        z-index: 11;
+        @include respond-to(desktops-large) {
+          height: 50px;
+          width: 50px;
+          line-height: 50px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        i {
+          font-size: 36px;
+          display: inline-block;
+          width: inherit;
+          height: inherit;
+          line-height: inherit;
+          @include respond-to(desktops-large) {
+            font-size: 46px;
+          }
+        }
+      }
+      .next {
+        right: $regular-spacer;
+      }
+      .prev {
+        left: $regular-spacer;
+      }
+    }
+    .carousel-inner {
+      position: relative;
+      display: block;
+      height: auto;
+      padding: $small-spacer;
+      -webkit-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+      height: 320px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+      .gallery-delete-bt, .addButton {
+        position: absolute;
+        top: $small-spacer;
+        z-index: 10;
+      }
+      .gallery-delete-bt {
+       right: $small-spacer;
+      }
+      .addButton {
+        left: $small-spacer;
+      }
+      img {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        max-height: 300px;
+        height: auto;
+        display: block;
+        -webkit-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+        &:hover, &:focus {
+          cursor: pointer;
+        }
+      }
+    }
+    .controls {
+      position: relative;
+      .carousel-thumbnails {
+        overflow: hidden;
+        list-style: none;
+        padding-left: 0;
+        li {
+          max-width: 33.333333%;
+          width: 100%;
+          padding: $small-spacer;
+
+          &.activeImage {
+            margin: 0;
+            background: transparent;
+            .custom-thumbnail {
+              border-color: $brand-color;
+              &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: $md-border-color;
+                z-index: 10;
+              }
+            }
+          }
+          .custom-thumbnail {
+            position: relative;
+            z-index: 9;
+            display: block;
+            padding: 4px;
+            margin-bottom: 0;
+            line-height: 1.42857143;
+            background: transparent;
+            border: 1px solid $md-border-color;
+            border-radius: 0;
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            &:hover, &:focus {
+              cursor: pointer;
+            }
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .carousel-inner, .controls {
+      &:hover, &:focus {
+        .nav-holder {
+          opacity: 1;
+          -webkit-transition: all .2s ease-in-out;
+          -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+        }
+      }
+    }
+  }
+}

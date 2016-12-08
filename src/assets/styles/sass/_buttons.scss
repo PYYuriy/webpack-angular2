@@ -1,0 +1,82 @@
+button, [md-button], .md-raised {
+  box-sizing: border-box;
+  position: relative;
+  background: transparent;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0 6px;
+  &.md-warn {
+    background-color: lighten($color-red, 10%);
+  }
+}
+
+md-icon.fa {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.assets-main-container {
+  [md-button], .md-raised {
+    margin: $small-spacer*0.5!important;
+    min-width: 88px;
+    line-height: 36px;
+    border-radius: 3px;
+    -webkit-transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    color: $brand-color !important;
+    background-color: $color-light-gray;
+    &:active {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+  .search-button {
+    min-width: initial;
+    margin: 0 !important;
+    line-height: 0;
+    padding: 0;
+    background-color: initial !important;
+    box-shadow: none;
+  }
+
+  // Common Class for action button holder
+  .action-btn-holder {
+    padding: $regular-spacer 0;
+  }
+}
+
+.custom-btn-path-block {
+  [md-button], .md-raised {
+    color: $primary-text !important;
+    background-color: white !important;
+    border: 1px solid $color-mid-gray;
+    box-shadow: none;
+  }
+}
+
+md-slide-toggle.md-checked:not(.md-disabled) .md-slide-toggle-thumb {
+  background-color: $brand-color;
+}
+
+md-slide-toggle.md-checked:not(.md-disabled) .md-slide-toggle-bar {
+  background-color: rgba(59, 138, 166, 0.54);
+}
+
+

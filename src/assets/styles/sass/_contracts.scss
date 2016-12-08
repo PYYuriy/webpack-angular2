@@ -1,0 +1,51 @@
+.assets-home-table{
+    .miet-table-header{
+        md-input-container{
+            padding: 9px;
+        }
+    }
+    .btn-add-group{
+
+    }
+    .custom-list-table-block-title{
+        padding: 3px 15px;
+        span{
+            color: #888888;
+        }
+    }
+    .custom-list-table-block-sub-title{
+        padding: 3px 15px 3px 10px;
+        background: rgba(00, 88, 120, 0.8);
+        color: white;
+    }
+    .custom-bottom-card-block{
+        margin-top: 40px;
+        .like-pagination{
+            font-size: 14px;
+        }
+
+    }
+    .custom-list-table-miet{
+        padding: 0px 15px;
+        border-bottom: 1px solid #E7E7E7;
+        align-items: center;
+        span{
+            padding: 3px;
+            border-right: 1px solid #E7E7E7;
+            i{
+                color:#888888;
+            }
+        }
+    }
+}
+#contracts-vertrage-handsome-wrapper {
+    table.htCore {
+      td:last-of-type {
+        img {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+}

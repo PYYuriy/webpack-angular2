@@ -1,0 +1,61 @@
+md-sidenav-layout md-sidenav {
+  &.md-sidenav-side {
+    overflow-y: visible;
+  }
+
+  md-list {
+    md-list-item {
+      position: relative;
+      display: block;
+      font-weight: 200;
+      color: white;
+      font-size: 1em;
+      &:focus, &:hover {
+        background-color: white;
+        color: $active-color;
+        cursor: pointer;
+      }
+    }
+    .active {
+      background-color: white;
+      color: $active-color;
+    }
+  }
+  .auto-container {
+    position: relative;
+    margin: $small-spacer $small-spacer 0 $regular-spacer;
+    &:before {
+      font-family: "Material Icons";
+      display: inline-block;
+      font-size: $body-font-size*1.1;
+      content: '\e8b6';
+      position: absolute;
+      right: 5%;
+      left: auto;
+      color: $color-mid-gray;
+      top: 6px;
+      right: -2px;
+      line-height: 30px;
+      height: 30px;
+      background: $sidenav-color;
+    }
+    .form-control {
+      padding: 0;
+      color: $inverse-text;
+      width: inherit;
+      font-weight: $normal-font-weight;
+      border-bottom: 1px solid $color-white;
+      background-image: none;
+
+      &:focus {
+        box-shadow: none;
+        border-bottom: 2px solid $color-red;
+        padding-bottom: 0;
+      }
+    }
+    typeahead-container {
+      z-index: 1000;
+      display: block;
+    }
+  }
+}

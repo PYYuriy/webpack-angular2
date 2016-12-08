@@ -1,0 +1,427 @@
+// Overrides for Handsontable styles
+//.fixed-height-table {
+//  margin: $small-spacer;
+//}
+
+.handsontable {
+  .htDimmed {
+    color: #000000;
+  }
+  .ht_master, .ht_master .wtHolder, .ht_master .wtHider {
+    //width: 100% !important;
+  }
+  thead {
+    th {
+      background-color: $color-white;
+      color: #8F8F8F;
+      line-height: 1;
+      word-break: break-word;
+      white-space: normal;
+      &.ht__highlight {
+        background: transparent;
+        color: $color-secondary-gray;
+      }
+    }
+    //th:first-child {
+    //  display: none;
+    //}
+  }
+  tr:first-child th {
+    border-top-color: $color-white;
+    border-right-color: $color-white;
+    border-left-color: $color-white;
+    color: $color-secondary-gray;
+    background-color: $color-white;
+  }
+  tr:first-child th, tr:first-child td {
+    text-align: left;
+  }
+  //tbody tr td:first-child {
+  //  display: none!important;
+  //}
+  tr:hover:not(.hot-tree-container) {
+    //cursor: pointer;
+    td {
+      background-color: $selected-row-color;
+      color: #000;
+    }
+  }
+  .inner-date,.htAutocomplete {
+    position: relative;
+    height: inherit;
+    .date-icon,.htAutocompleteArrow {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .inner-drop-down {
+    line-height: ($input-height - 2px);
+  }
+  //.listbox td.htDimmed {
+  //  line-height: $regular-spacer*2;
+  //}
+  // Override text alignment to the left
+  .htRight {
+    text-align: left;
+  }
+  .htAutocompleteArrow {
+    color: $color-secondary-gray;
+    width: 10%;
+    padding-right: 3px;
+    transform: scaleY(.5);
+    font-size: $body-font-size*.875;
+    line-height: $input-height;
+  }
+  .selectedRow {
+    td, .highlight {
+      background-color: $selected-row-color !important;
+      color: $primary-text !important;
+    }
+  }
+  .handsontableInputHolder textarea.handsontableInput {
+    line-height: 31px;
+  }
+
+  th, td {
+    padding: $small-spacer*.25 $small-spacer*.5;
+    vertical-align: middle;
+     //word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    img {
+      margin: auto;
+    }
+    .link-img {
+      max-width: 18px;
+      &:hover, &:focus {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+md-card-content, .hot-tree-container {
+  > .handsontable {
+    > .ht_master, .ht_clone_top {
+      td:first-child, th:first-child, col:first-child {
+        //visibility: hidden;
+        //width: 0px !important;
+        border-right: none;
+      }
+      td:nth-child(2) {
+        border-left: none;
+      }
+    }
+  }
+}
+
+.fixed-height-table {
+  margin: $regular-spacer 0;
+  > .ht_master > .wtHolder {
+    height: auto !important;
+  }
+}
+
+.fixed-handsome-height {
+  height: 250px;
+  overflow: auto;
+}
+
+.handsontableEditor.autocompleteEditor.listbox.handsontable {
+  //height: 200px!important;
+  //top: initial!important;
+}
+
+.handsontableEditor {
+  .ht_master {
+    height: inherit !important;
+    .wtHolder {
+      height: inherit !important;
+    }
+  }
+}
+
+#list-view-table {
+  //thead > tr > th:last-child {
+  //  font-size: 0;
+  //}
+  td {
+    cursor: default;
+    white-space: initial;
+    text-overflow: initial;
+  }
+  > .material-icons {
+    cursor: pointer;
+    padding: 2px 4px;
+  }
+}
+// Handson tables datepicker overrides
+.htDatepickerHolder {
+  display: block !important;
+  visibility: hidden;
+}
+
+.pika-single {
+  visibility: visible;
+  border-radius: 0;
+  @include shadow-z4();
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  filter: alpha(opacity=0);
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
+
+  &.is-hidden {
+    display: block !important;
+    visibility: hidden;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all .25s;
+    transition: all .25s;
+  }
+  .pika-lendar {
+    margin: 0;
+    width: auto;
+    .pika-title {
+      padding: .2em 0;
+      font-weight: bold;
+      text-align: center;
+      > * {
+        @include body-text();
+      }
+      .pika-prev, .pika-next {
+        background-image: none;
+        font-size: 0;
+        width: 30px;
+        text-indent: 0;
+        &:before {
+          content: '';
+          display: inline-block;
+          @include body-text();
+          font-family: "FontAwesome";
+        }
+      }
+      .pika-prev {
+        &:before {
+          content: '\f053';
+        }
+      }
+      .pika-next {
+        &:before {
+          content: '\f054';
+        }
+      }
+    }
+    .pika-table {
+      thead {
+        background: $color-light-gray;
+        th {
+          padding: .7em .3em;
+          text-align: center;
+          font-weight: bold;
+          border: 0;
+          @include body-text();
+        }
+      }
+      td {
+        width: auto;
+        border: 0;
+        padding: 1px;
+        &.is-selected .pika-button {
+          background: $brand-color;
+          color: $inverse-text;
+          box-shadow: none;
+          &:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: $main-text-color;
+          }
+        }
+        .pika-button {
+          @include body-text();
+          background: none;
+          padding: 0;
+          display: block;
+          border-radius: 50%;
+          height: 36px;
+          width: 36px;
+          text-align: center;
+          line-height: 34px;
+          &:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: $main-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// custom tree view table
+//.treeViewTable::-webkit-scrollbar {
+//  display: none;
+//}
+.treeViewTable {
+  height: 280px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include respond-to(desktops) {
+    overflow-x: visible;
+  }
+  tr.treeViewHeader {
+    border:  1px solid darken($brand-color, 5%);
+    border-bottom: 1px solid darken($brand-color, 15%);
+
+    &:hover {
+      td {
+        background: darken($brand-color, 10%);
+        color: $inverse-text;
+      }
+    }
+    td {
+      border: none;
+      background-color: darken($brand-color, 5%);
+      color: $color-white;
+      &:first-of-type {
+        padding-left: 5px;
+      }
+      .material-icons {
+        cursor: pointer;
+        float: right;
+        padding-right: 40px;
+      }
+    }
+  }
+  > .handsontable {
+    min-width: 1212px;
+    max-width: 100%;
+    width: 100%;
+    border-collapse: inherit;
+    tr.treeViewHeader, tr {
+      td.fixed-height-table {
+        overflow: visible;
+      }
+      td {
+        .handsontableEditor.autocompleteEditor.listbox.handsontable {
+          height: 150px !important;
+          overflow: auto !important;
+          overflow-y: hidden !important;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          position: absolute !important;
+          box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 5px 8px 0 rgba(0,0,0,.14),0 1px 14px 0 rgba(0,0,0,.12);
+          > .ht_master.handsontable {
+            box-sizing: border-box;
+            padding-right: 0 !important;
+
+            > .wtHolder {
+              overflow-y: auto;
+              overflow-x: hidden;
+            }
+            table {
+              border: 0 none !important;
+            }
+          }
+         > .wtHolder {
+            width: 100% !important;
+          }
+        }
+      }
+      &:hover {
+        .hot-tree-container {
+          cursor: pointer;
+          td {
+            background-color: $selected-row-color;
+            color: $primary-text;
+          }
+        }
+      }
+    }
+
+    .hot-tree-container {
+      > .fixed-height-table {
+        .handsontableInputHolder {
+          //height: auto;
+          .handsontableEditor.autocompleteEditor.listbox {
+            background: $color-white;
+            padding-right: 0 !important;
+          }
+        }
+        .ht_master, .ht_master .wtHolder, .ht_master .wtHider {
+          //height: auto !important;
+          width: auto !important;
+        }
+      }
+      .selectedRow td {
+        background-color: $selected-row-color;
+        color: $primary-text;
+      }
+      > td:first-child {
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+      .fixed-height-table {
+        > .handsontable > td:first-child {
+          padding-left: 10px;
+        }
+      }
+    }
+    //td[id*="hot-property-assets"] {
+    //}
+    //> tbody {
+    //  > tr td {
+    //    border: none;
+    //    line-height: 0px;
+    //    vertical-align: inherit;
+    //  }
+    //}
+  }
+}
+
+#history-handsome-wrapper .htAutocompleteArrow {
+  display: none;
+}
+
+.hot-max-width-100 {
+  max-width: 100% !important;
+  > div {
+    max-width: 100% !important;
+  }
+}
+
+.handsontable td.htInvalid {
+  background-color: #fff;
+}
+
+.date-icon {
+  float: right;
+  color: #b6b6b6;
+  font-size: 20px;
+}
+
+.inner-drop-down {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  float: left;
+}

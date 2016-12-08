@@ -1,0 +1,41 @@
+////@import "material-core/variables";
+////@import "material-core/mixins";
+////@import "material-core/structure";
+////@import "material-core/typography";
+////@import "material-core/default-theme";
+//@import "material-core/layout";
+//
+//// Include non-theme styles for core.
+//@import '~@angular/material/core/theming/all-theme';
+//@include md-core();
+//@import "sass/variables";
+//
+//
+//// Define a theme.
+//$primary: md-palette($md-blue-grey);
+//$accent:  md-palette($md-pink, A200, A100, A400);
+//
+//$theme: md-light-theme($primary, $accent);
+//
+////// Include all theme styles for the components.
+////@include angular-material-theme($theme);
+// Import all the tools needed to customize the theme and extract parts of it
+@import '~@angular/material/core/theming/all-theme';
+
+@mixin reamis-theme($theme) {
+  // Extract whichever individual palettes you need from the theme.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+}
+
+// Define a theme.
+$primary:  md-palette($md-blue-grey, 600, 500, 700);
+$accent: md-palette($md-red, 900, 700, 900);
+$theme: md-light-theme($primary, $accent);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+// Import your custom input theme file so you can call the custom-input-theme function
+@import "core";
+
+

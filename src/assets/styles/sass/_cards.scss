@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'mixins';
+//
+// MD_CARD STYLES
+//
+md-card, .md-card {
+  padding: $large-spacer;
+  margin-bottom: $regular-spacer;
+  @include shadow-z4();
+  @include respond-to(tablets-landscape) {
+    padding: $regular-spacer;
+  }
+
+  md-card-title {
+    padding: 0 $small-spacer;
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    //border-bottom: 1px solid $border-color;
+    .ui-widget, .ui-calendar, .ui-autocomplete.ui-widget {
+      margin-top: 0;
+    }
+  }
+  md-card-content {
+    font-family: $body-font;
+    font-weight: $normal-font-weight;
+    font-size: $body-font-size;
+    margin-bottom: 0;
+    padding-bottom: $regular-spacer;
+  }
+  .card-title {
+    border-bottom: 1px solid #ccc;
+  }
+}

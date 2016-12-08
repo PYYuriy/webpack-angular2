@@ -1,0 +1,65 @@
+// Colors
+$brand-color: rgba(51, 122, 147, 1);
+$md-brand-color: #546e7a;
+$color-white: rgba(255, 255, 255, 1);
+$color-veil: rgba(255, 255, 255, 0.5);
+$color-black: #000;
+$yellow-color: #FFFF00;
+$red-marker-color: #D80923;
+$color-red: rgba(152, 19, 36, 1); //#981324
+$color-gray: #4A4E54;
+$color-mid-gray: #A9A9A9;
+$color-light-gray: #EBEBEB;
+$color-secondary-gray: rgba(0, 0, 0, 0.38);
+$toolbar-color: $color-gray;
+$sidenav-color: $color-gray;
+$main-nav-bg: $color-white;
+$main-nav-active-bg: rgba(152, 19, 36, 0.05);
+$secondary-toolbar-color: #005878; // Material material-core
+$active-color: $color-red;
+$active-link-bg: rgba(227, 222, 222, 1);
+$border-color: #e1e1e1;
+$md-border-color: rgba(0, 0, 0, 0.12);
+$selected-row-color: #d8e8ee;
+// Typography
+$body-font: "Roboto";
+$main-text-color: $color-black;
+$inverse-text-color: $color-white;
+$light-font-weight: 300;
+$normal-font-weight: 400;
+$semibold-font-weight: 500;
+$bold-font-weight: 700;
+// Body
+$body-smaller-font-size: 16px;
+$body-font-size: 16px;
+// Titles
+$small-title-font-size: 20px;
+$title-font-size: 32px;
+$primary-text: $color-black;
+$inverse-text: $color-white;
+$warn-text: $color-red;
+$secondary-inverse-text: darken($inverse-text, 10%);
+// Heights
+$main-toolbar-height: 44px;
+$toolbar-height: 64px;
+$small-spacer: 8px;
+$regular-spacer: $small-spacer*2;
+$large-spacer: $small-spacer*3;
+$xlarge-spacer: $small-spacer*4;
+$input-height: 30px;
+
+//== BOOTSTRAP Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+$screen-xs: 480px !default;
+$screen-xs-min: $screen-xs !default;
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+$screen-lg: 1440px !default;
+$screen-lg-min: $screen-lg !default;
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;

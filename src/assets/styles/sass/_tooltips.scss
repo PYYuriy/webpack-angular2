@@ -1,0 +1,8 @@
+tooltip-container {
+  .md-tooltip {
+    border-radius: 3px;
+    &.bottom {
+      margin-top: -10px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<nav md-tab-nav-bar aria-label="weather navigation links">
+  <a md-tab-link
+     *ngFor="let tabLink of tabLinks; let i = index"
+     [routerLink]="tabLink.link"
+     [active]="activeLinkIndex === i"
+     (click)="activeLinkIndex = i">
+    <i class="material-icons">{{ tabLink.icon }}</i>
+    {{tabLink.label}}
+  </a>
+</nav>
+<md-card>
+  <router-outlet></router-outlet>
+</md-card>
+<br>
+
+<footer-com></footer-com>

@@ -1,0 +1,22 @@
+// TOAST MESSAGES
+.toast {
+  animation: flipInX 1s linear;
+  opacity: 1;
+  border-radius: 0;
+  @include shadow-z9();
+  &.toast-info {
+    background-color: $color-white !important;
+  }
+  &.toast-success {
+
+  }
+  &.toast-error {
+    background-color: $color-red !important;
+
+    color: $inverse-text !important;
+    p {
+      color: $inverse-text !important;
+    }
+
+  }
+}

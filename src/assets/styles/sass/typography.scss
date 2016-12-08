@@ -1,0 +1,38 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5 {
+  font-weight: $normal-font-weight;
+}
+h3 {
+  font-size: $small-title-font-size;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+html, body, .ui-widget, md-card-content  {
+  color: $main-text-color;
+  font-family: $body-font;
+  font-weight: $normal-font-weight;
+  font-size: 100%;
+  font-size: $body-font-size;
+}
+
+button, select, html, textarea, input {
+  font-family: $body-font;
+}
+
+p {
+  color: $main-text-color;
+  font-family: $body-font;
+  font-weight: $normal-font-weight;
+  font-size: $body-font-size;
+}
+.text-bold {
+  font-weight: $bold-font-weight;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

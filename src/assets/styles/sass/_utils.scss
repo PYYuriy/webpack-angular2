@@ -1,0 +1,212 @@
+// Padding Classes
+.small-padding {
+  padding: $small-spacer;
+}
+
+.no-padding-h {
+  padding-left: 0 !important;
+  padding-right: 0 !important;;
+}
+
+.small-padding-h {
+  padding-left: $small-spacer;
+  padding-right: $small-spacer;
+}
+
+.small-padding-v {
+  padding-top: $small-spacer;
+  padding-bottom: $small-spacer;
+
+}
+
+// 16px PADDINGS
+.regular-padding {
+  padding: $regular-spacer;
+  @include respond-to(phones-landscape) {
+    padding: $small-spacer*1.5;
+    @include respond-to(phones) {
+      padding: $small-spacer;
+    }
+  }
+}
+
+.regular-padding-h {
+  padding-left: $regular-spacer;
+  padding-right: $regular-spacer;
+  @include respond-to(phones-landscape) {
+    padding-left: $small-spacer;
+    padding-right: $small-spacer;
+  }
+}
+
+.regular-padding-v {
+  padding-top: $regular-spacer;
+  padding-bottom: $regular-spacer;
+  @include respond-to(phones-landscape) {
+    padding-top: $small-spacer;
+    padding-bottom: $small-spacer;
+  }
+}
+
+.regular-padding-top {
+  padding-top: $regular-spacer;
+}
+
+// 24px PADDINGS
+.large-padding {
+  padding: $large-spacer;
+  @include respond-to(tablets-portrait) {
+    padding: $regular-spacer;
+    @include respond-to(phones) {
+      padding: $small-spacer;
+    }
+  }
+}
+
+.large-padding-h {
+  padding-left: $large-spacer !important;
+  padding-right: $large-spacer !important;
+  @include respond-to(phones-landscape) {
+    padding-left: $small-spacer !important;
+    padding-right: $small-spacer !important;
+  }
+}
+
+.large-padding-v {
+  padding-top: $large-spacer;
+  padding-bottom: $large-spacer;
+  @include respond-to(phones-landscape) {
+    padding-top: $regular-spacer;
+    padding-bottom: $regular-spacer;
+    @include respond-to(phones) {
+      padding-top: $small-spacer;
+      padding-bottom: $small-spacer;
+    }
+  }
+}
+
+// 40px PADDINGS
+.xlarge-padding {
+  padding: ($large-spacer+$regular-spacer);
+  @include respond-to(phones-landscape) {
+    padding: $regular-spacer;
+    @include respond-to(phones) {
+      padding: $small-spacer;
+    }
+  }
+}
+
+.xlarge-padding-h {
+  padding-left: $xlarge-spacer;
+  padding-right: $xlarge-spacer;
+  @include respond-to(phones-landscape) {
+    padding-left: $regular-spacer;
+    padding-right: $regular-spacer;
+    @include respond-to(phones) {
+      padding-left: $small-spacer;
+      padding-right: $small-spacer;
+    }
+  }
+}
+
+.xlarge-padding-v {
+  padding-top: $xlarge-spacer;
+  padding-bottom: $xlarge-spacer;
+  @include respond-to(phones-landscape) {
+    padding-top: $regular-spacer;
+    padding-bottom: $regular-spacer;
+    @include respond-to(phones) {
+      padding-top: $small-spacer;
+      padding-bottom: $small-spacer;
+    }
+  }
+}
+
+// Margin classes
+.no-margin {
+  margin: 0 !important;
+}
+
+.margin-small {
+  margin: $small-spacer;
+}
+
+.margin-top {
+  margin-top: $regular-spacer !important;
+}
+
+.margin-top-small {
+  margin-top: $small-spacer;
+}
+
+.margin-top-tiny {
+  margin-top: $small-spacer*.5;
+}
+
+.margin-top-large {
+  margin-top: $large-spacer;
+  @include respond-to(phones-landscape) {
+    margin-top: $regular-spacer;
+    @include respond-to(phones) {
+      margin-top: $regular-spacer;
+    }
+  }
+}
+
+.margin-right {
+  margin-right: $regular-spacer;
+}
+
+.margin-right-small {
+  margin-right: $small-spacer;
+}
+
+.margin-right-large {
+  margin-right: $large-spacer;
+}
+
+.margin-left {
+  margin-left: $regular-spacer;
+}
+
+.margin-left-small {
+  margin-left: $small-spacer;
+}
+
+.margin-left-large {
+  margin-left: $large-spacer !important;
+}
+
+.margin-bottom {
+  margin-bottom: $regular-spacer;
+}
+
+.margin-bottom-small {
+  margin-bottom: $small-spacer;
+}
+
+.margin-bottom-large {
+  margin-bottom: $large-spacer;
+  @include respond-to(phones-landscape) {
+    margin-bottom: $regular-spacer;
+    @include respond-to(phones) {
+      margin-bottom: $regular-spacer;
+    }
+  }
+}
+
+//
+/* Utils */
+
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.visually-hidden {
+  visibility: hidden;
+}

@@ -1,0 +1,89 @@
+@import 'variables';
+@import 'mixins';
+//
+// MD-TABS
+//
+md-tab-group {
+  .md-tab-header {
+    .md-tab-label {
+      font-size: $body-font-size;
+      font-weight: $bold-font-weight;
+      color: $primary-text;
+      opacity: 1;
+      min-width: initial;
+      display: flex;
+      align-items: stretch;
+      padding: 0;
+      &:focus {
+        background-color: rgba(152, 19, 36, .05);
+      }
+      &.md-tab-disabled {
+        a {
+          color: $color-secondary-gray;
+        }
+      }
+      a {
+        white-space: nowrap;
+        padding: 0 $small-spacer*1.5;
+        position: relative;
+      }
+      &.md-tab-active a {
+        color: $warn-text;
+        //&:focus {
+        //  background-color: rgba(152, 19, 36, .05);
+        //}
+      }
+    }
+    md-ink-bar {
+      background-color: $color-red;
+    }
+  }
+}
+
+md-tab-group {
+  z-index: 10;
+  overflow-y: hidden;
+  overflow-x: auto;
+  position: relative;
+  &.main-nav {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    position: fixed;
+    top: $main-toolbar-height;
+    width: 100%;
+    .md-tab-header {
+      overflow: visible;
+      .md-tab-label a {
+        &:hover, &:focus {
+          color: $color-red;
+        }
+      }
+
+    }
+  }
+}
+
+#main-content {
+  md-tab-group {
+    .md-tab-header {
+      overflow: visible;
+      .md-tab-label {
+        &:focus {
+          background-color: rgba(51, 122, 147, .05);
+        }
+        a {
+          color: $color-secondary-gray;
+          text-transform: uppercase;
+        }
+        &.md-tab-active a {
+          color: $primary-text;
+        }
+      }
+      md-ink-bar {
+        background-color: $brand-color;
+      }
+      .md-ripple-background {
+        background-color: rgba(51, 122, 147, .05);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'mixins';
+//
+// FONTS
+//
+$md-font-url: '../../fonts/' !default;
+@font-face {
+    font-family: 'Roboto', sans-serif;
+}
+
+// Fontello Custom Font
+@font-face {
+    font-family: 'fontello';
+    src: url($md-font-url + 'fontello.eot?50558434');
+    src: url($md-font-url + 'fontello.eot?50558434#iefix') format('embedded-opentype'),
+    url($md-font-url + 'fontello.woff2?50558434') format('woff2'),
+    url($md-font-url + 'fontello.woff?50558434') format('woff'),
+    url($md-font-url + 'fontello.ttf?50558434') format('truetype'),
+    url($md-font-url + 'fontello.svg?50558434#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+
+
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url($md-font-url + 'fontello.svg?50558434#fontello') format('svg');
+  }
+}
+
+// Material Icons Font
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url($md-font-url + 'MaterialIcons-Regular.eot');
+    /* For IE6-8 */
+    src: local($md-font-url + 'Material Icons'),
+    local($md-font-url + 'MaterialIcons-Regular'),
+    url($md-font-url + 'MaterialIcons-Regular.woff2') format('woff2'),
+    url($md-font-url + 'MaterialIcons-Regular.woff') format('woff'),
+    url($md-font-url + 'MaterialIcons-Regular.ttf') format('truetype');
+}

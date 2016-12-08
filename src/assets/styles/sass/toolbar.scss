@@ -1,0 +1,89 @@
+@import 'variables';
+@import 'mixins';
+//
+// MD-TOOLBAR
+//
+md-toolbar {
+  z-index: 10;
+
+  .md-toolbar-layout {
+    width: 100%;
+  }
+  &.main-toolbar {
+    position: fixed;
+    background-color: $toolbar-color;
+    min-height: $main-toolbar-height;
+    height: $main-toolbar-height;
+    z-index:10;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+    top: 0;
+    md-toolbar-row {
+      min-height: 44px;
+      height: 44px;
+      justify-content: space-between;
+      img {
+        max-height: 25px;
+      }
+    }
+    .right-nav-holder {
+      [md-button] {
+        font-size: 16px;
+        text-transform: initial;
+        font-weight: $bold-font-weight;
+        color: $color-white;
+        .md-button-wrapper {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .user-pic {
+        padding: 0 8px;
+      }
+      .v-divider {
+        border-left: 1px solid $color-white;
+        padding-right: 8px;
+      }
+    }
+  }
+  //&.main-nav {
+  //    background-color: $main-nav-bg;
+  //    md-toolbar-row {
+  //        min-height: .01%;
+  //        overflow-x: auto;
+  //        overflow-y: hidden;
+  //        width: 100%;
+  //    }
+  //    a {
+  //        text-align: center;
+  //        padding: 0 8px;
+  //        font-size: $body-font-size;
+  //        font-weight: $bold-font-weight;
+  //        color: $primary-text;
+  //        opacity: 1;
+  //        text-transform: uppercase;
+  //        height: 60px;
+  //        display: flex;
+  //        align-items: center;
+  //        &:focus,
+  //        &:hover {
+  //            background-color: $main-nav-active-bg;
+  //        }
+  //        &.active {
+  //            color: $warn-text;
+  //            border-bottom: 3px solid #981324;
+  //            background-color: $main-nav-active-bg;
+  //            &:focus {
+  //                background-color: $main-nav-active-bg;
+  //            }
+  //        }
+  //    }
+  //}
+  &.secondary-toolbar {
+    background-color: $secondary-toolbar-color;
+    position: fixed;
+  }
+}
+
+
+
+

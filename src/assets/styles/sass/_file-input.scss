@@ -1,0 +1,83 @@
+.custom-component-drop-zone.dropZone {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-style: dashed;
+  border-color: $color-mid-gray;
+  .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .inputfile + label {
+    max-width: 80%;
+    font-size: 14px;
+    font-family: $body-font;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+  }
+
+  .no-js .inputfile + label {
+    display: none;
+  }
+
+  .inputfile:focus + label, label:focus, .inputfile:hover + label {
+    outline: none;
+    background-color: darken($color-light-gray, 10%);
+  }
+
+  .inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+  }
+
+  .inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+  }
+
+  .inputfile-2 + label {
+    margin-top: $regular-spacer;
+    color: $brand-color;
+    border: none;
+    -webkit-transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background-color: $color-light-gray;
+  }
+
+  .inputfile-2:focus + label,
+  .inputfile-2.has-focus + label,
+  .inputfile-2 + label:hover {
+    color: darken($brand-color, 10%);
+  }
+}
+
+.search-width {
+  width: 200px;
+}
+
+

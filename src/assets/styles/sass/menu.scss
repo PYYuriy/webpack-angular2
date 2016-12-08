@@ -1,0 +1,45 @@
+@import 'variables';
+@import 'mixins';
+//
+// Dropdown menu
+//
+md-menu {
+    position: relative;
+    display: flex;
+    [md-button] {
+        padding: 0 8px;
+        .dropdown-arrow {
+            margin-top: 5px;
+        }
+    }
+    md-menu-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-shadow: 0px 2px 5px 0 $color-secondary-gray;
+        z-index: 100;
+        background: $color-white;
+        color: $primary-text;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.20s linear;
+        [md-button] {
+            color: $primary-text !important;
+            width: 100%;
+            margin: 0;
+        }
+    }
+    .md-backdrop {
+        display: none;
+        z-index: 99;
+    }
+    &.show-menu {
+        md-menu-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        md-backdrop {
+            display: block;
+        }
+    }
+}

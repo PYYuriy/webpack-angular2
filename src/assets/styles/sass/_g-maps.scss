@@ -1,0 +1,67 @@
+// Style Overrides for Google Bubble window
+
+.gm-style {
+
+  .map-labels {
+    color: $inverse-text !important;
+  }
+
+  .map-labels,  .map-labels-s {
+    > div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .gm-style-iw {
+    width: 100% !important;
+    min-width: 200px;
+    min-height: 200px;
+    top: 0 !important;
+    left: 0 !important;
+    &:hover {
+      cursor: pointer;
+      #preview-img {
+        transform: scale(1.1);
+        transition: all .2s ease-in-out;
+      }
+    }
+
+    > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      top: 0 !important;
+      left: 0 !important;
+      .info-wrapper {
+        min-width: 200px;
+        min-height: 200px;
+      }
+      .ui-g-7, .ui-g-5, .ui-g-12 {
+        padding: 0;
+      }
+      .img-wrapper {
+        overflow: hidden;
+        #preview-img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          transition: all .2s ease-in-out;
+        }
+      }
+      .info-land, .info-id, .address {
+        font-size: $body-smaller-font-size;
+        text-align: left;
+        margin: 0 $small-spacer;
+      }
+      .address {
+        font-weight: 700;
+        font-size: $body-font-size;
+        line-height: 40px;
+      }
+    }
+    + div {
+      display: none;
+    }
+  }
+
+}

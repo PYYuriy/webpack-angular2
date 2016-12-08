@@ -1,0 +1,55 @@
+typeahead-container {
+
+  .dropdown-menu {
+    z-index: 8;
+    min-width: $regular-spacer*16;
+    height: $regular-spacer*24;
+    margin-top: 4px;
+    background-color: $color-white;
+    border: 0 none;
+    border-radius: 2px;
+    padding: $small-spacer 0;
+    //max-height: 304px;
+    max-height: initial;
+    overflow: auto;
+    display: block;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+
+    > li {
+      line-height: $regular-spacer*2;
+      height: $regular-spacer*2;
+      margin: 2px 0;
+      &.active {
+        > a {
+          background-color: $color-light-gray;
+          color: $primary-text;
+          &:focus, &:hover {
+            background-color:  $color-light-gray;
+            color: $primary-text;
+          }
+        }
+      }
+
+      // Notifications Styles
+      > a {
+        font-size: 15px;
+        line-height: $regular-spacer*2;
+        height: $regular-spacer*2;
+        color: $primary-text;
+        text-decoration: none;
+        background-color: $color-white;
+        outline: 0;
+        padding: 0 $small-spacer;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        &:focus, &:hover {
+          background-color: $color-light-gray;
+        }
+
+      }
+    }
+  }
+}
